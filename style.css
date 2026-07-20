@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2.0rem;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.one{
+    background-color: cornflowerblue;
+}
+.two{
+    background-color: lightcoral;
+}
+.three{
+    background-color: lightgreen;
+}
+.four{
+    background-color: tan;
+}
