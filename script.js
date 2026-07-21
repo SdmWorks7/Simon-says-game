@@ -5,13 +5,11 @@ let box = ["one", "two", "three", "four"];
 
 let started = false;
 let level = 0;
+let max = 0;
 
 let h2 = document.querySelector('h2');
 
-let one = document.querySelector('.one');
-let two = document.querySelector('.two');
-let three = document.querySelector('.three');
-let four = document.querySelector('.four');
+maxScore();
 
 document.addEventListener("keypress", function(){
     if(!started){
@@ -37,6 +35,7 @@ function levelUp(){
     let randBtn = document.querySelector(`.${randColor}`);
     game.push(randColor);
     btnFlash(randBtn);
+    maxScore();
 }
 
 function checkAns(idx){
@@ -78,6 +77,13 @@ function reset(){
     level = 0;
     user = [];
     game = [];
+}
+
+function maxScore(){
+    if(max<level){
+        max = level;
+    }
+    document.querySelector(".maxScore").innerText=`HIGHEST SCORE: ${max}`;
 }
 
 let allBtns = document.querySelectorAll(".btn");
