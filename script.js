@@ -13,16 +13,16 @@ maxScore();
 
 document.addEventListener("keypress", function(){
     if(!started){
-        started = true
+        started = true;
+        levelUp();
     }
-    levelUp();
 })
 
 function btnFlash(btn){
     btn.classList.add("blank");
     setTimeout(function(){
         btn.classList.remove("blank");
-    }, 80)
+    }, 50)
 }
 
 function levelUp(){
