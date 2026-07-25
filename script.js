@@ -11,10 +11,12 @@ let h2 = document.querySelector('h2');
 
 maxScore();
 
-document.addEventListener("keypress", function(){
-    if(!started){
+document.addEventListener("keydown", function(event){
+    if(event.code==="Space"){
+        if(!started){
         started = true;
         levelUp();
+    }
     }
 })
 
@@ -44,7 +46,7 @@ function checkAns(idx){
         setTimeout(levelUp, 800);
     }else{
         h2.innerText = `Game Over! YOUR SCORE: ${level}
-         Press any key to restart!`;
+         Press Space to restart!`;
         document.querySelector("body").classList.add("wrong");
         setTimeout(()=>document.querySelector("body").classList.remove("wrong"),300)
         reset();
@@ -69,7 +71,7 @@ function resetBtn(){
     level = 0;
     user = [];
     game = [];
-    h2.innerText = `Press Any Key to Start the Game Again`;
+    h2.innerText = `Press Space to Start the Game Again`;
 }
 
 function reset(){
