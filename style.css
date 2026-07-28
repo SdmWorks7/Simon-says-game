@@ -59,3 +59,30 @@ body{
     justify-content: center;
     align-items: center;
 }
+.Reverse{
+    height: 50px;
+    width: 200px;
+    font-weight: 800;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Reverse-clicked{
+    height: 50px;
+    width: 200px;
+    font-weight: 800;
+    color: black;
+    background-color: greenyellow;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

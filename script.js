@@ -4,6 +4,7 @@ let user = [];
 let box = ["one", "two", "three", "four"];
 
 let started = false;
+let reverse = false;
 let level = 0;
 let max = 0;
 
@@ -18,6 +19,12 @@ document.addEventListener("keydown", function(event){
         levelUp();
     }
     }
+})
+
+document.querySelector(".Reverse").addEventListener("click", function(){
+    reverse = true;
+    document.querySelector(".Reverse").classList.add("Reverse-clicked");
+
 })
 
 function btnFlash(btn){
@@ -41,15 +48,24 @@ function levelUp(){
 }
 
 function checkAns(idx){
-    if(game[idx]===user[idx]){
+    if(game[idx]===user[idx]&& !(reverse)){
        if(game.length == user.length)
         setTimeout(levelUp, 800);
-    }else{
+    }
+    else if(reverse && game[game.length - idx - 1]===user[idx]){
+        if(game.length == user.length)
+        setTimeout(levelUp, 800);
+    }
+    else{
         h2.innerText = `Game Over! YOUR SCORE: ${level}
          Press Space to restart!`;
         document.querySelector("body").classList.add("wrong");
         setTimeout(()=>document.querySelector("body").classList.remove("wrong"),300)
         reset();
+        if(reverse){
+            document.querySelector(".Reverse").classList.remove("Reverse-clicked");
+            reverse = false;
+        }
     }
         
     
